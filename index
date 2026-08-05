@@ -1,0 +1,84 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AIAPGET 2025 CBT Mock Test</title><style>
+*{box-sizing:border-box;margin:0;padding:0}body{background:#f4f5f7;color:#1f2933;font:14px/1.5 Arial,Helvetica,sans-serif}
+.top{height:64px;background:#fff;border-bottom:3px solid #e87925;display:flex;align-items:center;padding:0 20px;gap:12px}
+.logo{width:42px;height:42px;border:3px solid #e87925;border-radius:50%;color:#07549b;display:grid;place-items:center;text-align:center;font-size:9px;font-weight:bold;line-height:1.1;flex-shrink:0}
+.brand b{font-size:17px;color:#07549b}.brand small{color:#52606d;font-size:12px}
+.clock{margin-left:auto;color:#bd1e2d;font-size:17px;font-weight:bold;white-space:nowrap}
+.nav{height:38px;background:#07549b;color:#fff;display:flex;align-items:center;gap:24px;padding:0 20px;font-size:12px;overflow-x:auto;white-space:nowrap}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:10px;max-width:1400px;margin:10px auto;padding:0 10px}
+.card{background:#fff;border:1px solid #d1d9e1;border-radius:3px}
+.question-title{padding:12px 16px;background:#eaf3fb;border-bottom:1px solid #c8dceb;color:#07549b;font-weight:bold;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.body{min-height:520px;padding:20px 22px}
+.question-text{font-size:15px;line-height:1.75;white-space:pre-line;max-width:960px;margin-bottom:24px}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:860px}
+.option{background:#fff;border:1px solid #aebbc8;color:#1f2933;text-align:left;padding:12px 14px;font-size:13.5px;cursor:pointer;border-radius:3px;display:flex;align-items:flex-start;gap:10px;line-height:1.5;transition:all .15s}
+.option:hover{border-color:#07549b;background:#f5faff}
+.option.selected{border:2px solid #07549b;background:#eaf3fb;font-weight:600}
+.choiceNo{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;border-radius:50%;background:#e6ebf0;color:#243b53;font-size:12px;font-weight:bold;flex-shrink:0}
+.selected .choiceNo{background:#07549b;color:#fff}
+.option-text{padding-top:3px}
+.actions{border-top:1px solid #d8dee5;background:#fafafa;padding:10px 14px;display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:0;border-radius:3px;color:#fff;padding:10px 14px;font-size:12px;font-weight:bold;cursor:pointer;white-space:nowrap}
+.gray{background:#66717f;margin-right:auto}.orange{background:#df761e}.green{background:#14833b}.blue{background:#07549b}.red{background:#bd1e2d}
+.side-head{padding:12px 14px;background:#07549b;color:#fff;font-weight:bold;font-size:13px}
+.candidate{padding:14px;border-bottom:1px solid #d8dee5;display:flex;align-items:center;gap:10px}
+.avatar{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;background:#e7f0fa;border-radius:50%;color:#07549b;font-size:18px;font-weight:bold;flex-shrink:0}
+.legend{padding:10px 14px;font-size:11px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.legend span{display:flex;align-items:center;gap:5px}
+.leg-box{width:14px;height:14px;border-radius:50%;flex-shrink:0}
+.palette{padding:12px 14px;border-top:1px solid #d8dee5}
+.numbers{margin-top:8px;display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.num{height:30px;width:30px;border:1px solid #ccc;background:#e9edf1;cursor:pointer;font-size:11px;font-weight:bold;border-radius:3px;color:#333}
+.num.answered{color:#fff;background:#14833b;border-color:#14833b;border-radius:50%}
+.num.marked{color:#fff;background:#784398;border-color:#784398;border-radius:50%}
+.num.current{outline:3px solid #e87925;outline-offset:-1px}
+.submit{width:calc(100% - 28px);margin:12px 14px}
+.start{max-width:680px;margin:50px auto;padding:34px;text-align:center;background:#fff;border:1px solid #d1d9e1;border-radius:6px}
+.start h1{color:#07549b;margin:0 0 6px;font-size:22px}
+.start p{color:#52606d;margin-bottom:4px}
+.start .rules{text-align:left;background:#f4f8fc;padding:16px;line-height:1.8;margin:18px 0;border-radius:4px;font-size:13px}
+.result{max-width:1100px;margin:24px auto;padding:22px;background:#fff;border:1px solid #d1d9e1;border-radius:6px}
+.result h2{color:#07549b;margin-bottom:8px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.metric{padding:14px;background:#f3f8fd;border-left:4px solid #07549b;border-radius:3px}
+.metric b{display:block;font-size:24px;color:#07549b;margin-top:4px}
+.table{width:100%;border-collapse:collapse;margin-top:16px;font-size:12px}
+.table td,.table th{padding:7px 8px;border:1px solid #d3dbe4;text-align:left}
+.table th{background:#07549b;color:#fff;font-size:11px}
+.good{color:#14833b;font-weight:bold}.bad{color:#bd1e2d;font-weight:bold}.drop{color:#9a6400;font-weight:bold}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.side{order:-1;max-height:260px;overflow-y:auto}.answers{grid-template-columns:1fr}.nav{gap:10px;font-size:11px}.metrics{grid-template-columns:1fr 1fr}.brand small{display:none}.question-text{font-size:14px}}
+</style></head><body>
+<header class="top"><div class="logo">NTA<br>CBT</div><div class="brand"><b>AIAPGET 2025</b><br><small>All India AYUSH Post Graduate Entrance Test - Homoeopathy</small></div><div class="clock" id="clock" hidden>Time Left: <span>120:00</span></div></header>
+<div class="nav"><span>Exam: AIAPGET 2025</span><span>Subject: Homoeopathy</span><span>Duration: 120 Minutes</span><span>Total Marks: 480</span></div>
+<main id="app"></main>
+<script src="questions.js"></script>
+<script>
+const Q=window.AIAPGET_2025_QUESTIONS;
+const key={5001:1,5002:1,5003:4,5004:2,5005:1,5006:4,5007:2,5008:3,5009:2,5010:2,5011:2,5012:3,5013:1,5014:3,5015:3,5016:3,5017:2,5018:1,5019:3,5020:4,5021:2,5022:1,5023:4,5024:2,5025:1,5026:4,5027:1,5028:2,5029:2,5030:1,5031:3,5032:1,5033:2,5034:4,5035:3,5036:1,5037:2,5038:4,5039:4,5040:2,5041:"Drop",5042:1,5043:3,5044:1,5045:2,5046:4,5047:3,5048:3,5049:2,5050:4,5051:4,5052:1,5053:3,5054:3,5055:4,5056:1,5057:2,5058:2,5059:2,5060:4,5061:2,5062:4,5063:3,5064:2,5065:3,5066:3,5067:1,5068:3,5069:1,5070:1,5071:2,5072:4,5073:4,5074:3,5075:2,5076:3,5077:3,5078:2,5079:2,5080:1,5081:4,5082:1,5083:4,5084:2,5085:3,5086:4,5087:4,5088:1,5089:3,5090:4,5091:4,5092:4,5093:1,5094:2,5095:2,5096:2,5097:3,5098:2,5099:4,5100:2,5101:1,5102:4,5103:3,5104:3,5105:2,5106:3,5107:1,5108:3,5109:4,5110:4,5111:4,5112:3,5113:2,5114:1,5115:3,5116:4,5117:2,5118:1,5119:3,5120:1};
+let current=0,answers={},marks={},seconds=7200,started=false,timer;
+const app=document.querySelector("#app"),clock=document.querySelector("#clock");
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function start(){started=true;clock.hidden=false;timer=setInterval(tick,1000);tick();render()}
+function tick(){let m=Math.floor(seconds/60),s=seconds%60;clock.querySelector("span").textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");if(seconds<=0)finish();else seconds--}
+function state(x){return marks[x]?"marked":answers[x]?"answered":""}
+function render(){
+if(!started){app.innerHTML='<section class="start"><h1>AIAPGET 2025 Online Mock Test</h1><p>Homoeopathy \u2014 120 Questions \u2014 480 Marks</p><div class="rules"><b>Instructions</b><br>1. The test duration is <b>120 minutes</b>; the timer begins only after you start.<br>2. Correct answer: <b>+4 marks</b>. Incorrect answer: <b>\u20131 mark</b>. Unattempted: 0.<br>3. You may save, clear, or mark questions for review before submitting.<br>4. Question ID 5041 is dropped in the official final key and receives +4 marks.<br>5. Click on the question number in the palette to jump to any question.</div><button class="btn blue" style="font-size:16px;padding:14px 36px" onclick="start()">Start Test</button></section>';return}
+let q=Q[current];
+let nums=Q.map((x,j)=>'<button class="num '+state(j)+(j===current?" current":"")+'" onclick="jump('+j+')">'+(j+1)+'</button>').join("");
+let optHtml=q.options.map((label,n)=>'<button class="option '+(answers[current]===n+1?"selected":"")+'" onclick="choose('+(n+1)+')"><span class="choiceNo">'+(n+1)+'</span><span class="option-text">'+esc(label)+'</span></button>').join("");
+let answered=Object.keys(answers).length,markedC=Object.keys(marks).length;
+app.innerHTML='<div class="layout"><section class="card"><div class="question-title"><span>Question No. '+q.number+'</span><span>Question ID: '+q.id+' &nbsp;|&nbsp; Marks: 4.00</span></div><div class="body"><div class="question-text">'+esc(q.text)+'</div><div class="answers">'+optHtml+'</div></div><div class="actions"><button class="btn gray" onclick="clearAnswer()">Clear Response</button><button class="btn orange" onclick="markReview()">Mark for Review & Next</button><button class="btn green" onclick="saveNext()">Save & Next</button></div></section><aside class="card side"><div class="side-head">Question Palette</div><div class="candidate"><span class="avatar">C</span><div><b>Mock Candidate</b><br><small style="color:#52606d">AIAPGET 2025</small></div></div><div class="legend"><span><span class="leg-box" style="background:#14833b"></span> Answered ('+answered+')</span><span><span class="leg-box" style="background:#784398"></span> Marked ('+markedC+')</span><span><span class="leg-box" style="background:#e9edf1;border:1px solid #ccc"></span> Not visited</span><span><span class="leg-box" style="background:#fff;border:3px solid #e87925"></span> Current</span></div><div class="palette"><b>Homoeopathy</b><div class="numbers">'+nums+'</div></div><button class="btn red submit" onclick="confirmSubmit()">Submit Test</button></aside></div>'}
+function choose(n){answers[current]=n;delete marks[current];render()}
+function clearAnswer(){delete answers[current];delete marks[current];render()}
+function saveNext(){if(current<Q.length-1)current++;render();window.scrollTo(0,0)}
+function markReview(){marks[current]=true;if(current<Q.length-1)current++;render();window.scrollTo(0,0)}
+function jump(n){current=n;render();window.scrollTo(0,0)}
+function confirmSubmit(){if(confirm("Are you sure you want to submit? You cannot change answers after submission."))finish()}
+function finish(){clearInterval(timer);clock.hidden=true;
+let correct=0,wrong=0,unattempted=0,bonus=0;
+Q.forEach((q,i)=>{if(key[q.id]==="Drop")bonus+=4;else if(!answers[i])unattempted++;else if(answers[i]===key[q.id])correct++;else wrong++});
+let score=correct*4-wrong+bonus;
+let rows=Q.map((q,i)=>{let k=key[q.id],a=answers[i],aText=a?q.options[a-1]:"Not attempted",kText=k==="Drop"?"Dropped":q.options[k-1],label=k==="Drop"?"Dropped \u2014 +4 awarded":!a?"Not attempted":a===k?"Correct (+4)":"Wrong (\u20131)",cl=k==="Drop"?"drop":!a?"":a===k?"good":"bad";return '<tr><td>'+q.number+'</td><td>'+q.id+'</td><td>'+(a||"\u2014")+'</td><td>'+esc(aText)+'</td><td>'+(k==="Drop"?"Drop":k)+'</td><td>'+esc(kText)+'</td><td class="'+cl+'">'+label+'</td></tr>'}).join("");
+app.innerHTML='<section class="result"><h2>Test Submitted \u2014 AIAPGET 2025</h2><p>Official final key analysis. Question ID 5041 is dropped and awarded +4 marks.</p><div class="metrics"><div class="metric">Score<b>'+score+' / 480</b></div><div class="metric">Correct<b>'+correct+'</b></div><div class="metric">Wrong<b>'+wrong+'</b></div><div class="metric">Unattempted<b>'+unattempted+'</b></div></div><h3 style="margin:16px 0 0">Question-wise Analysis</h3><div style="overflow-x:auto"><table class="table"><tr><th>Q#</th><th>ID</th><th>Your Ans</th><th>Your Answer Text</th><th>Key</th><th>Correct Answer</th><th>Result</th></tr>'+rows+'</table></div><p style="margin-top:16px"><button class="btn blue" style="font-size:14px;padding:12px 28px" onclick="location.reload()">Start a Fresh Attempt</button></p></section>';window.scrollTo(0,0)}
+render();
+</script></body></html>
