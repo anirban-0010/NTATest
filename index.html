@@ -1,12 +1,18 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AIAPGET CBT Mock Test</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>AIAPGET CBT Mock Test</title>
 <style>
+:root{--header-h:64px;--nav-h:38px;--actions-h:0px}
+@media(max-width:600px){:root{--header-h:54px;--nav-h:34px}}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#f4f5f7;color:#1f2933;font:14px/1.5 Arial,Helvetica,sans-serif}
-.top{height:64px;background:#fff;border-bottom:3px solid #e87925;display:flex;align-items:center;padding:0 20px;gap:12px}
-.logo{width:42px;height:42px;border:3px solid #e87925;border-radius:50%;color:#07549b;display:grid;place-items:center;text-align:center;font-size:9px;font-weight:bold;line-height:1.1;flex-shrink:0}
-.brand b{font-size:17px;color:#07549b}.brand small{color:#52606d;font-size:12px}
-.clock{margin-left:auto;color:#bd1e2d;font-size:17px;font-weight:bold;white-space:nowrap}
-.nav{height:38px;background:#07549b;color:#fff;display:flex;align-items:center;gap:24px;padding:0 20px;font-size:12px;overflow-x:auto;white-space:nowrap}
+html{overflow-x:hidden;width:100%;-webkit-text-size-adjust:100%}
+body{background:#f4f5f7;color:#1f2933;font:14px/1.5 Arial,Helvetica,sans-serif;overflow-x:hidden;width:100%;max-width:100vw;padding-top:calc(var(--header-h) + var(--nav-h))}
+button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.top{height:var(--header-h);background:#fff;border-bottom:3px solid #e87925;display:flex;align-items:center;padding:0 16px;padding-left:calc(16px + env(safe-area-inset-left));padding-right:calc(16px + env(safe-area-inset-right));gap:10px;position:fixed;top:0;left:0;right:0;z-index:100}
+.logo{width:40px;height:40px;border:3px solid #e87925;border-radius:50%;color:#07549b;display:grid;place-items:center;text-align:center;font-size:9px;font-weight:bold;line-height:1.1;flex-shrink:0}
+.brand{min-width:0}
+.brand b{font-size:16px;color:#07549b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.brand small{color:#52606d;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.clock{margin-left:auto;color:#bd1e2d;font-size:16px;font-weight:bold;white-space:nowrap;flex-shrink:0}
+.nav{height:var(--nav-h);background:#07549b;color:#fff;display:flex;align-items:center;gap:18px;padding:0 16px;padding-left:calc(16px + env(safe-area-inset-left));padding-right:calc(16px + env(safe-area-inset-right));font-size:11.5px;overflow-x:auto;white-space:nowrap;position:fixed;top:var(--header-h);left:0;right:0;z-index:99;-webkit-overflow-scrolling:touch}
 .layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:10px;max-width:1400px;margin:10px auto;padding:0 10px}
 .card{background:#fff;border:1px solid #d1d9e1;border-radius:3px}
 .question-title{padding:12px 16px;background:#eaf3fb;border-bottom:1px solid #c8dceb;color:#07549b;font-weight:bold;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
@@ -29,16 +35,17 @@ body{background:#f4f5f7;color:#1f2933;font:14px/1.5 Arial,Helvetica,sans-serif}
 .mtf-choose{font-size:13px;color:#555;margin-top:8px}
 /* Answers */
 .answers{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:860px}
-.option{background:#fff;border:1px solid #aebbc8;color:#1f2933;text-align:left;padding:12px 14px;font-size:13.5px;cursor:pointer;border-radius:3px;display:flex;align-items:flex-start;gap:10px;line-height:1.5;transition:all .15s;width:100%}
+.option{background:#fff;border:1px solid #aebbc8;color:#1f2933;text-align:left;padding:13px 14px;font-size:13.5px;cursor:pointer;border-radius:3px;display:flex;align-items:flex-start;gap:10px;line-height:1.5;transition:all .15s;width:100%;min-height:46px}
 .option:hover{border-color:#07549b;background:#f5faff}
 .option.selected{border:2px solid #07549b;background:#eaf3fb;font-weight:600}
 .choiceNo{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;border-radius:50%;background:#e6ebf0;color:#243b53;font-size:12px;font-weight:bold;flex-shrink:0}
 .selected .choiceNo{background:#07549b;color:#fff}
 .option-text{padding-top:2px;font-family:monospace;font-size:13px;letter-spacing:.2px}
 .actions{border-top:1px solid #d8dee5;background:#fafafa;padding:10px 14px;display:flex;gap:8px;flex-wrap:wrap}
-.btn{border:0;border-radius:3px;color:#fff;padding:10px 14px;font-size:12px;font-weight:bold;cursor:pointer;white-space:nowrap}
+.btn{border:0;border-radius:3px;color:#fff;padding:11px 14px;font-size:12.5px;font-weight:bold;cursor:pointer;white-space:nowrap;min-height:42px}
 .gray{background:#66717f;margin-right:auto}.orange{background:#df761e}.green{background:#14833b}.blue{background:#07549b}.red{background:#bd1e2d}.purple{background:#533483}
-.side-head{padding:12px 14px;background:#07549b;color:#fff;font-weight:bold;font-size:13px}
+.side-head{padding:12px 14px;background:#07549b;color:#fff;font-weight:bold;font-size:13px;display:flex;align-items:center;justify-content:space-between}
+.palette-close{display:none;background:rgba(255,255,255,.2);border:0;color:#fff;width:30px;height:30px;border-radius:50%;font-size:15px;cursor:pointer;flex-shrink:0}
 .candidate{padding:14px;border-bottom:1px solid #d8dee5;display:flex;align-items:center;gap:10px}
 .avatar{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;background:#e7f0fa;border-radius:50%;color:#07549b;font-size:18px;font-weight:bold;flex-shrink:0}
 .legend{padding:10px 14px;font-size:11px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
@@ -46,18 +53,21 @@ body{background:#f4f5f7;color:#1f2933;font:14px/1.5 Arial,Helvetica,sans-serif}
 .leg-box{width:14px;height:14px;border-radius:50%;flex-shrink:0}
 .palette{padding:12px 14px;border-top:1px solid #d8dee5}
 .numbers{margin-top:8px;display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
-.num{height:30px;width:30px;border:1px solid #ccc;background:#e9edf1;cursor:pointer;font-size:11px;font-weight:bold;border-radius:3px;color:#333}
+.num{height:30px;width:30px;border:1px solid #ccc;background:#e9edf1;cursor:pointer;font-size:11px;font-weight:bold;border-radius:3px;color:#333;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .num.answered{color:#fff;background:#14833b;border-color:#14833b;border-radius:50%}
 .num.marked{color:#fff;background:#784398;border-color:#784398;border-radius:50%}
 .num.current{outline:3px solid #e87925;outline-offset:-1px}
-.submit{width:calc(100% - 28px);margin:12px 14px}
+.submit{width:calc(100% - 28px);margin:12px 14px;min-height:46px}
+/* Mobile palette FAB + overlay */
+.palette-fab{display:none}
+.palette-backdrop{display:none}
 /* Home screen */
 .home{max-width:900px;margin:36px auto;padding:0 16px}
 .home-header{text-align:center;margin-bottom:28px}
 .home-header h1{color:#07549b;font-size:26px;margin-bottom:4px}
 .home-header p{color:#52606d;font-size:14px}
-.year-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
-.year-card{background:#fff;border:1px solid #d1d9e1;border-radius:10px;padding:24px 22px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.year-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:14px}
+.year-card{background:#fff;border:1px solid #d1d9e1;border-radius:10px;padding:24px 22px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .year-card:hover{border-color:#07549b;box-shadow:0 4px 16px rgba(7,84,155,.12);transform:translateY(-2px)}
 .year-card .yr{font-size:38px;font-weight:800;color:#07549b;line-height:1}
 .year-card .meta{margin-top:10px;color:#52606d;font-size:12.5px;line-height:1.7}
@@ -71,7 +81,7 @@ body{background:#f4f5f7;color:#1f2933;font:14px/1.5 Arial,Helvetica,sans-serif}
 .start h1{color:#07549b;margin:0 0 6px;font-size:22px}
 .start p{color:#52606d;margin-bottom:4px}
 .start .rules{text-align:left;background:#f4f8fc;padding:16px;line-height:1.8;margin:18px 0;border-radius:4px;font-size:13px}
-.back-link{display:inline-block;margin-bottom:16px;color:#07549b;font-size:13px;cursor:pointer;text-decoration:underline}
+.back-link{display:inline-block;margin-bottom:16px;color:#07549b;font-size:13px;cursor:pointer;text-decoration:underline;touch-action:manipulation;padding:6px 0}
 /* Result */
 .result{max-width:1200px;margin:20px auto;padding:22px;background:#fff;border:1px solid #d1d9e1;border-radius:6px}
 .result h2{color:#07549b;margin-bottom:8px}
@@ -86,7 +96,7 @@ body{background:#f4f5f7;color:#1f2933;font:14px/1.5 Arial,Helvetica,sans-serif}
 .expl{font-size:10.5px;color:#444;background:#f8f9fb;padding:5px 8px;margin-top:4px;border-left:3px solid #07549b;border-radius:0 4px 4px 0;line-height:1.5}
 /* Analysis */
 .analysis-section{margin-top:22px;padding-top:18px;border-top:3px solid #07549b}
-.subj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin:10px 0}
+.subj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(210px,100%),1fr));gap:10px;margin:10px 0}
 .subj-card{border:1px solid #e0e4e8;border-radius:8px;padding:12px}
 .subj-card .sn{font-size:13px;font-weight:700;color:#16213e}
 .subj-card .ss{font-size:11px;color:#555;margin-top:3px}
@@ -112,12 +122,59 @@ body{background:#f4f5f7;color:#1f2933;font:14px/1.5 Arial,Helvetica,sans-serif}
   .analysis-section{page-break-before:always}
   .mtf-table{font-size:10px}
 }
-@media(max-width:850px){.layout{grid-template-columns:1fr}.side{order:-1;max-height:260px;overflow-y:auto}.answers{grid-template-columns:1fr}.nav{gap:10px;font-size:11px}.metrics{grid-template-columns:1fr 1fr}.brand small{display:none}.year-grid{grid-template-columns:1fr}.mtf-table{font-size:12px}}
+/* ===================== MOBILE / TABLET (<=850px) ===================== */
+@media(max-width:850px){
+  :root{--actions-h:64px}
+  .layout{grid-template-columns:1fr;padding-bottom:calc(var(--actions-h) + 18px)}
+  .answers{grid-template-columns:1fr}
+  .nav{gap:10px;font-size:11px}
+  .metrics{grid-template-columns:1fr 1fr}
+  .brand small{display:none}
+  .year-grid{grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr))}
+  .mtf-table{font-size:12.5px}
+  .mtf-table td{padding:8px 10px}
+
+  /* Palette becomes a full-screen bottom-sheet overlay, opened via FAB */
+  .side{display:none;position:fixed;inset:0;top:auto;bottom:0;left:0;right:0;z-index:210;max-height:82vh;border-radius:14px 14px 0 0;box-shadow:0 -4px 24px rgba(0,0,0,.25);overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:env(safe-area-inset-bottom)}
+  .side.open{display:block;animation:slideUp .22s ease-out}
+  @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+  .palette-close{display:flex;align-items:center;justify-content:center}
+  .palette-backdrop.open{display:block;position:fixed;inset:0;background:rgba(20,25,40,.5);z-index:205}
+  .palette-fab{display:flex;align-items:center;gap:7px;position:fixed;right:14px;bottom:calc(var(--actions-h) + 14px + env(safe-area-inset-bottom));z-index:120;background:#533483;color:#fff;border:0;border-radius:24px;padding:11px 18px 11px 14px;font-size:13px;font-weight:bold;box-shadow:0 3px 12px rgba(0,0,0,.28);cursor:pointer}
+  .palette-fab .fab-badge{background:rgba(255,255,255,.25);border-radius:10px;padding:2px 8px;font-size:11.5px}
+
+  /* Bigger, thumb-friendly tap targets */
+  .num{width:100%;height:40px;font-size:12.5px}
+  .numbers{grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:8px}
+  .option{min-height:50px;padding:14px}
+  .btn{min-height:44px;font-size:13px}
+
+  /* Sticky bottom action bar for the exam-taking screen */
+  .actions{position:fixed;left:0;right:0;bottom:0;z-index:90;box-shadow:0 -2px 10px rgba(0,0,0,.08);padding-bottom:calc(10px + env(safe-area-inset-bottom));padding-left:calc(14px + env(safe-area-inset-left));padding-right:calc(14px + env(safe-area-inset-right))}
+  .actions .btn{flex:1 1 30%;margin-right:0!important}
+
+  /* Result tables: sticky first column so context isn't lost while scrolling sideways */
+  .rtable{min-width:640px}
+  .rtable th:first-child,.rtable td:first-child{position:sticky;left:0;background:#fff;box-shadow:2px 0 4px rgba(0,0,0,.06);z-index:2}
+  .rtable th:first-child{background:#07549b;z-index:3}
+}
+/* ===================== SMALL PHONES (<=400px) ===================== */
+@media(max-width:400px){
+  .brand b{font-size:14.5px}
+  .clock{font-size:14px}
+  .clock .clock-label{display:none}
+  .logo{width:34px;height:34px;font-size:8px}
+  .top{gap:8px;padding:0 12px}
+  .nav{padding:0 12px;gap:12px}
+  .btn{font-size:12px;padding:10px 8px}
+  .metric b{font-size:19px}
+}
+@media print{.palette-fab,.palette-backdrop{display:none!important}}
 </style></head><body>
 <header class="top">
   <div class="logo">NTA<br>CBT</div>
   <div class="brand"><b id="brandTitle">AIAPGET Mock Test</b><br><small id="brandSub">All India AYUSH Post Graduate Entrance Test - Homoeopathy</small></div>
-  <div class="clock" id="clock" hidden>Time Left: <span>120:00</span></div>
+  <div class="clock" id="clock" hidden><span class="clock-label">Time Left: </span><span>120:00</span></div>
 </header>
 <div class="nav"><span>Exam: AIAPGET</span><span>Subject: Homoeopathy</span><span id="navDuration">Duration: —</span><span id="navMarks">Total Marks: —</span></div>
 <main id="app"></main>
@@ -125,6 +182,10 @@ body{background:#f4f5f7;color:#1f2933;font:14px/1.5 Arial,Helvetica,sans-serif}
 <script src="questions_2017.js"></script>
 <script src="questions_2020.js"></script>
 <script src="questions_2021.js"></script>
+<script src="questions_2022.js"></script>
+<script src="questions_2023.js"></script>
+<script src="questions_2024.js"></script>
+<script src="questions_2019.js"></script>
 <script src="metadata.js"></script>
 <script>
 const META=window.QUESTION_META||{};
@@ -132,8 +193,12 @@ const PAPERS={
   "2025":{title:"AIAPGET 2025",subtitle:"Homoeopathy — July 4, 2025",questions:window.AIAPGET_2025_QUESTIONS,
     key:{5001:1,5002:1,5003:4,5004:2,5005:1,5006:4,5007:2,5008:3,5009:2,5010:2,5011:2,5012:3,5013:1,5014:3,5015:3,5016:3,5017:2,5018:1,5019:3,5020:4,5021:2,5022:1,5023:4,5024:2,5025:1,5026:4,5027:1,5028:2,5029:2,5030:1,5031:3,5032:1,5033:2,5034:4,5035:3,5036:1,5037:2,5038:4,5039:4,5040:2,5041:"Drop",5042:1,5043:3,5044:1,5045:2,5046:4,5047:3,5048:3,5049:2,5050:4,5051:4,5052:1,5053:3,5054:3,5055:4,5056:1,5057:2,5058:2,5059:2,5060:4,5061:2,5062:4,5063:3,5064:2,5065:3,5066:3,5067:1,5068:3,5069:1,5070:1,5071:2,5072:4,5073:4,5074:3,5075:2,5076:3,5077:3,5078:2,5079:2,5080:1,5081:4,5082:1,5083:4,5084:2,5085:3,5086:4,5087:4,5088:1,5089:3,5090:4,5091:4,5092:4,5093:1,5094:2,5095:2,5096:2,5097:3,5098:2,5099:4,5100:2,5101:1,5102:4,5103:3,5104:3,5105:2,5106:3,5107:1,5108:3,5109:4,5110:4,5111:4,5112:3,5113:2,5114:1,5115:3,5116:4,5117:2,5118:1,5119:3,5120:1},
     totalQ:120,duration:120,perQ:4,negMark:1,note:"Q ID 5041 is dropped and awarded +4 marks."},
+  "2024":{title:"AIAPGET 2024",subtitle:"Homoeopathy — 2024 Paper",questions:window.AIAPGET_2024_QUESTIONS,key:window.AIAPGET_2024_KEY,totalQ:120,duration:120,perQ:4,negMark:1,note:"13 match-the-list questions with garbled options are dropped (full marks awarded)."},
+  "2023":{title:"AIAPGET 2023",subtitle:"Homoeopathy — 2023 Paper",questions:window.AIAPGET_2023_QUESTIONS,key:window.AIAPGET_2023_KEY,totalQ:120,duration:120,perQ:4,negMark:1,note:"1 question is dropped (official answer key)."},
+  "2022":{title:"AIAPGET 2022",subtitle:"Homoeopathy — 2022 Paper",questions:window.AIAPGET_2022_QUESTIONS,key:window.AIAPGET_2022_KEY,totalQ:120,duration:120,perQ:4,negMark:1,note:"20 match-the-list questions had unreliable source data and are dropped (full marks awarded)."},
   "2021":{title:"AIAPGET 2021",subtitle:"Homoeopathy — 2021 Paper",questions:window.AIAPGET_2021_QUESTIONS,key:window.AIAPGET_2021_KEY,totalQ:120,duration:120,perQ:4,negMark:1,note:"Q ID 21163 is dropped (official answer key)."},
   "2020":{title:"AIAPGET 2020",subtitle:"Homoeopathy — 2020 Paper",questions:window.AIAPGET_2020_QUESTIONS,key:window.AIAPGET_2020_KEY,totalQ:120,duration:120,perQ:4,negMark:1,note:"12 match-the-list questions are marked as dropped (OCR data incomplete)."},
+  "2019":{title:"AIAPGET 2019",subtitle:"Homoeopathy — 2019 Paper",questions:window.AIAPGET_2019_QUESTIONS,key:window.AIAPGET_2019_KEY,totalQ:100,duration:120,perQ:4,negMark:1,note:""},
   "2017":{title:"AIAPGET 2017",subtitle:"Homoeopathy — 2017 Paper",questions:window.AIAPGET_2017_QUESTIONS,key:window.AIAPGET_2017_KEY,totalQ:100,duration:120,perQ:4,negMark:1,note:""}
 };
 
@@ -192,13 +257,13 @@ function renderMTF(text){
   return `<div class="mtf-wrap">
     <div class="mtf-title">📋 ${esc(title||'Match List I with List II')}</div>
     ${header?`<div class="mtf-header">${esc(header)}</div>`:''}
-    <table class="mtf-table">
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="mtf-table">
       <thead><tr>
         <th></th><th>List I</th>
         <th></th><th>List II</th>
       </tr></thead>
       <tbody>${rows}</tbody>
-    </table>
+    </table></div>
     ${choose?`<div class="mtf-choose">${esc(choose)}</div>`:''}
   </div>`;
 }
@@ -303,8 +368,12 @@ function renderTest(){
         <button class="btn green" onclick="saveNext()">Save & Next</button>
       </div>
     </section>
-    <aside class="card side">
-      <div class="side-head">Question Palette</div>
+    <button class="palette-fab no-print" onclick="openPalette()" aria-label="Open question palette">
+      ☰ Palette <span class="fab-badge">${current+1}/${Q.length}</span>
+    </button>
+    <div class="palette-backdrop no-print" id="paletteBackdrop" onclick="closePalette()"></div>
+    <aside class="card side" id="paletteAside">
+      <div class="side-head">Question Palette<button class="palette-close no-print" onclick="closePalette()" aria-label="Close palette">✕</button></div>
       <div class="candidate"><span class="avatar">C</span>
         <div><b>Mock Candidate</b><br><small style="color:#52606d">${esc(conf.title)}</small></div>
       </div>
@@ -318,6 +387,19 @@ function renderTest(){
       <button class="btn red submit" onclick="confirmSubmit()">Submit Test</button>
     </aside>
   </div>`;
+  document.body.style.overflow='';
+}
+
+/* ====== MOBILE PALETTE OVERLAY ====== */
+function openPalette(){
+  document.getElementById('paletteAside')?.classList.add('open');
+  document.getElementById('paletteBackdrop')?.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closePalette(){
+  document.getElementById('paletteAside')?.classList.remove('open');
+  document.getElementById('paletteBackdrop')?.classList.remove('open');
+  document.body.style.overflow='';
 }
 
 /* ====== ACTIONS ====== */
@@ -431,7 +513,7 @@ function finish(){
       <div class="metric">Unattempted<b>${unattempted}</b></div>
     </div>
     <h3>Question-wise Analysis</h3>
-    <div style="overflow-x:auto"><table class="rtable">
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="rtable">
       <tr><th>Q#</th><th>ID</th><th>Subject</th><th>Ans</th><th>Your Answer</th><th>Key</th><th>Correct Answer & Explanation</th><th>Result</th></tr>
       ${rows}
     </table></div>
@@ -440,7 +522,7 @@ function finish(){
       ${insightHtml}
       <h3>Subject-wise Breakdown</h3>
       <div class="subj-grid">${subjCards}</div>
-      <div style="overflow-x:auto"><table class="rtable">
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="rtable">
         <tr><th>Subject</th><th>Qs</th><th>✓</th><th>✗</th><th>Skip</th><th>Accuracy</th><th>Net Marks</th></tr>
         ${subjTable}
         <tr style="background:#f0f2f5;font-weight:700"><td>TOTAL</td><td>${conf.totalQ}</td><td>${correct}</td><td>${wrong}</td><td>${unattempted}</td><td>${accuracy}%</td><td>${score>=0?"+":""}${score}</td></tr>
